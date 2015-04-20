@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Landing</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/select2.min.js"></script>
+    <script type="text/javascript" src="js/perfect-scrollbar.jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        // registration step one modal
+        var $registerStepTwo = $("#register-step-two").dialog({
+            dialogClass: 'blue-footer',
+            width: 870,
+            height: 570,
+            modal: true,
+            autoOpen: false,
+            draggable: false,
+            resizable: false,
+            buttons: [{
+                text: 'CLEAR FIELDS',
+                class: 'back-button',
+                click: function() {
+                    $(this).find('select').select2("val", "");
+                    $(this).find('input').val('');
+                }
+            },
+            {
+                text: 'FINISH REGISTRATION »',
+                class: 'finish-button',
+                click: function() {
+                    $(this).dialog('close');
+                }
+            }],
+            open: function() {
+                // custom scroll
+                $('#register-step-two').perfectScrollbar();
+            }
+        });
+        $registerStepTwo.data("uiDialog")._title = function(title) {
+            title.html( this.options.title );
+        };
+        $registerStepTwo.dialog('option', 'title', '<strong>Complete Registration</strong> Please fill out all the information below so that we can set your account up just right.');
+
+        // registration step two modal
+        var $registerStepOne = $("#register-step-one").dialog({
+            width: 850,
+            modal: true,
+            autoOpen: false,
+            draggable: false,
+            resizable: false,
+            buttons: [{
+                text: 'VALIDATE & CONTINUE »',
+                class: 'continue',
+                click: function() {
+                    $registerStepOne.dialog('close');
+                    $registerStepTwo.dialog('open');
+                }
+            }]
+        });
+        $registerStepOne.data("uiDialog")._title = function(title) {
+            title.html( this.options.title );
+        };
+        $registerStepOne.dialog('option', 'title', '<strong>Complete Registration</strong> Please fill out all the information below so that we can set your account up just right.');
+
+        $('#sign-up-form form').on('submit', function(e){
+            e.preventDefault();
+            $registerStepOne.dialog('open');
+        });
+    })
+    </script>
+    <script type="text/javascript">
+    // select2
+    $(function() {
+        $('.select2').select2({
+            placeholder: "Please select one:",
+            minimumResultsForSearch: Infinity
+        });
+    })
+    </script>
+</head>
+<body>
+<div id="page-wrap">
+    <div id="header">
+        <a id="logo" href="home.html"></a>
+        <div id="header-links">
+            <a href="">Contact Us</a>
+            <a href="">Help </a>
+        </div>
+    </div>
+    <div id="header-border"></div>
+
+    <div id="landing-content">
+        <div id="sign-up-form">
+            <form action="">
+                <img src="images/icons/color-window.png" alt=""/>
+                <p><span>Sign up today</span><br/>
+                    to access your account
+                    and information.
+                </p>
+                <input type="text" name="user-name" placeholder="Enter in name"/>
+                <input type="email" name="user-email" placeholder="Enter in email"/>
+                <button>START REGISTRATION »</button>
+            </form>
+        </div>
+
+        <div id="landing-login">
+            <img src="images/icons/color-ppl.png" alt=""/>
+            <p>Already a Member?</p>
+            <a class="basic-link yellow" href="">Log in »</a>
+        </div>
+
+        <div id="slogan">
+            Trusted for over 100 years <br/>
+            Providing the best customer service for those at Local 150. <br/>
+            Welcome to your self-service community.
+        </div>
+
+        <div id="news-information">
+            <h3>News & Information</h3>
+            <div id="news-block">
+                <div class="news-item">
+                    <img src="images/post_img.png" alt=""/>
+                    <h4>Post Title</h4>
+                    <p>Lorem ipsum dolor sit <a href="">amet</a>, consectetur adipisicing elit. A accusantium amet eius eveniet fuga, molestiae necessitatibus quod unde voluptatem. Dolore ex fuga iure, magni qui quibusdam quisquam reprehenderit totam voluptates?</p>
+                </div>
+                <div class="news-item">
+                    <img src="images/post_img.png" alt=""/>
+                    <h4>Post Title</h4>
+                    <p>Lorem ipsum dolor sit <a href="">amet</a>, consectetur adipisicing elit. A accusantium amet eius eveniet fuga, molestiae necessitatibus quod unde voluptatem. Dolore ex fuga iure, magni qui quibusdam quisquam reprehenderit totam voluptates?</p>
+                </div>
+                <div class="news-item">
+                    <img src="images/post_img.png" alt=""/>
+                    <h4>Post Title</h4>
+                    <p>Lorem ipsum dolor sit <a href="">amet</a>, consectetur adipisicing elit. A accusantium amet eius eveniet fuga, molestiae necessitatibus quod unde voluptatem. Dolore ex fuga iure, magni qui quibusdam quisquam reprehenderit totam voluptates?</p>
+                </div>
+            </div>
+
+            <div id="information-block">
+                <a class="information-item">
+                    <p>Not a member of Local 150?</p>
+                    Take a look at stories from our members, and join today.
+                </a>
+                <a class="information-item">
+                    <p>Colorectal cancer awareness</p>
+                    Learn more about your risks and options and visit a healthcare provider today.
+                </a>
+                <p>Need help? <a class="basic-link" href="">Contact Us.</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="register-step-one" class="register-modal">
+    <p>First, let’s get your member information first:</p>
+    <form action="">
+        <div class="form-row invalid">
+            <p class="field-error">* Error messages should appear here.</p>
+            <label for="user-id">PLEASE ENTER YOUR MEMBER ID:</label>
+            <input id="user-id" type="text"/>
+        </div>
+        <span class="separator">- OR -</span>
+        <div class="form-row">
+            <p class="field-error">* Error messages should appear here.</p>
+            <label for="user-number">REGISTRATION NUMBER:</label>
+            <input id="user-number" type="text"/>
+        </div>
+        <span class="separator">- AND -</span>
+        <div class="form-row">
+            <p class="field-error">* Error messages should appear here.</p>
+            <label for="user-social-number">LAST 4 OF SOCIAL SECURITY #:</label>
+            <input id="user-social-number" type="text"/>
+        </div>
+    </form>
+</div>
+
+<div id="register-step-two" class="register-modal">
+    <p>Now let’s collect the rest of your information:</p>
+    <form action="">
+        <div class="form-row">
+            <p class="field-error">* Error messages should appear here.</p>
+            <label for="sample">SAMPLE FORM FIELD</label>
+            <input id="sample" type="text"/>
+        </div>
+        <div class="form-row">
+            <p class="field-error">* Error messages should appear here.</p>
+            <label for="user-number">DROPDOWNS</label>
+            <select name="" class="select2" style="width: 575px;">
+                <option value=""></option>
+                <option value="1">Choise #1</option>
+                <option value="2">Choise #2</option>
+                <option value="3">Choise #3</option>
+            </select>
+            <select name="" class="select2" style="width: 575px;">
+                <option value=""></option>
+                <option value="1">Choise #1</option>
+                <option value="2">Choise #2</option>
+                <option value="3">Choise #3</option>
+            </select>
+            <select name="" class="select2" style="width: 575px;">
+                <option value=""></option>
+                <option value="1">Choise #1</option>
+                <option value="2">Choise #2</option>
+                <option value="3">Choise #3</option>
+            </select>
+        </div>
+        <div class="form-row">
+            <p class="field-error">* Error messages should appear here.</p>
+            <label for="user-number">DROPDOWNS</label>
+            <select name="" class="select2" style="width: 575px;">
+                <option value=""></option>
+                <option value="1">Choise #1</option>
+                <option value="2">Choise #2</option>
+                <option value="3">Choise #3</option>
+            </select>
+            <select name="" class="select2" style="width: 575px;">
+                <option value=""></option>
+                <option value="1">Choise #1</option>
+                <option value="2">Choise #2</option>
+                <option value="3">Choise #3</option>
+            </select>
+            <select name="" class="select2" style="width: 575px;">
+                <option value=""></option>
+                <option value="1">Choise #1</option>
+                <option value="2">Choise #2</option>
+                <option value="3">Choise #3</option>
+            </select>
+        </div>
+        <div class="form-row">
+            <p class="field-error">* Error messages should appear here.</p>
+            <label for="user-number">DROPDOWNS</label>
+            <select name="" class="select2" style="width: 575px;">
+                <option value=""></option>
+                <option value="1">Choise #1</option>
+                <option value="2">Choise #2</option>
+                <option value="3">Choise #3</option>
+            </select>
+            <select name="" class="select2" style="width: 575px;">
+                <option value=""></option>
+                <option value="1">Choise #1</option>
+                <option value="2">Choise #2</option>
+                <option value="3">Choise #3</option>
+            </select>
+            <select name="" class="select2" style="width: 575px;">
+                <option value=""></option>
+                <option value="1">Choise #1</option>
+                <option value="2">Choise #2</option>
+                <option value="3">Choise #3</option>
+            </select>
+        </div>
+    </form>
+</div>
+
+<div id="footer">
+    <div id="inner-footer">
+        <img id="bottom-logo" src="images/bottom_logo.png" alt=""/>
+        <p id="copyright">Copyright © My150 by MOE Union. All rights reserved.</p>
+        <ul id="footer-nav">
+            <li><a href="">SITE MAP</a></li>
+            <li><a href="">ANTI-FRAUD</a></li>
+            <li><a href="">PRIVACY POLICY</a></li>
+            <li><a href="">LEGAL</a></li>
+            <li><a href="">HELP</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
