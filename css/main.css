@@ -1628,6 +1628,9 @@ a.information-item:hover {
     color: #3f4040;
     text-transform: uppercase;
 }
+.collect-info .question > span:first-of-type {
+    color: #3f4040;
+}
 .collect-info .question span {
     color: #69a7ee;
 }
