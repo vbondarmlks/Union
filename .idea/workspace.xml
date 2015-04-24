@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c3f831d-f998-4a98-bdd1-b8b8691721fa" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\git\Union\health_plan.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\git\Union\health_plan_choose.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\git\Union\health_plan_collect_info.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\git\Union\health_plan_confirmation.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\git\Union\health_plan_privacy_policy.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\git\Union\health_plan_review.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\git\Union\health_plan_wizard_start.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\git\Union\home.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\git\Union\landing.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\git\Union\plans.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/logo.png" afterPath="$PROJECT_DIR$/images/logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery-ui.min.js" afterPath="$PROJECT_DIR$/js/jquery-ui.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard.html" afterPath="$PROJECT_DIR$/dashboard.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profile.html" afterPath="$PROJECT_DIR$/profile.html" />
     </list>
     <ignored path="Union.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,11 +28,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="dashboard.html" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="dashboard.html" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/dashboard.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.15917604" vertical-offset="0" max-vertical-offset="3332">
-                  <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+                <state vertical-scroll-proportion="0.5093633" vertical-offset="0" max-vertical-offset="3332">
+                  <caret line="16" column="30" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
@@ -64,11 +52,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/css/main.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.7888307" vertical-offset="9340" max-vertical-offset="29427">
-                  <caret line="576" column="20" selection-start-line="576" selection-start-column="20" selection-end-line="576" selection-end-column="20" />
+                <state vertical-scroll-proportion="0.15532286" vertical-offset="18866" max-vertical-offset="29444">
+                  <caret line="1115" column="21" selection-start-line="1115" selection-start-column="21" selection-end-line="1115" selection-end-column="21" />
                   <folding />
                 </state>
               </provider>
@@ -89,9 +77,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/profile.html" />
         <option value="$PROJECT_DIR$/dashboard.html" />
+        <option value="$PROJECT_DIR$/css/main.css" />
       </list>
     </option>
   </component>
@@ -338,14 +326,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7888307" vertical-offset="9340" max-vertical-offset="29427">
-          <caret line="576" column="20" selection-start-line="576" selection-start-column="20" selection-end-line="576" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/profile.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.653847" vertical-offset="0" max-vertical-offset="1751">
@@ -356,8 +336,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15917604" vertical-offset="0" max-vertical-offset="3332">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.5093633" vertical-offset="0" max-vertical-offset="3332">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15532286" vertical-offset="18866" max-vertical-offset="29444">
+          <caret line="1115" column="21" selection-start-line="1115" selection-start-column="21" selection-end-line="1115" selection-end-column="21" />
           <folding />
         </state>
       </provider>

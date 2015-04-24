@@ -1069,7 +1069,7 @@ input.slider-input {
     float: left;
     display: block;
     width: 175px;
-    height: 55px;
+    height: 57px;
     background: url('../images/logo.png');
 }
 #header-links {
@@ -1113,7 +1113,8 @@ input.slider-input {
     line-height: 10px;
 }
 #account-links a.question {
-    background: url('../images/icons/grey-question.png') center 1px no-repeat;
+    padding: 0 0 0 30px;
+    background: url('../images/icons/grey-question.png') center left no-repeat;
 }
 #account-links a.notification {
     width: 50px;
