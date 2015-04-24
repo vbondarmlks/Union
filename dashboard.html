@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+</head>
+<body>
+<div id="page-wrap">
+    <div id="header">
+        <a id="logo" href="home.html"></a>
+        <div id="account-links">
+            <a class="question" href=""></a>
+            <a class="notification" href=""><span>3</span></a>
+            <a class="logout" href="">LOGOUT</a>
+        </div>
+    </div>
+    <div id="header-border"></div>
+
+    <div id="top-tabs">
+        <a class="top-tab home active" href="">Home</a>
+        <a class="top-tab health-plan" href="">My Health Plan</a>
+        <a class="top-tab documents" href="">My Documents</a>
+        <a class="top-tab pay-dues" href="">Pay My Dues</a>
+        <a class="top-tab profile" href="">My Profile</a>
+    </div>
+    <div id="tabs-border"></div>
+
+    <div id="main-content">
+        <a href="" class="enrollment-bar"><span>open enrollment - 20 days left!</span></a>
+        <div class="sidebar">
+            <div class="sidebar-widget">
+                <h4 class="sidebar-header">My Info At-A-Glance</h4>
+                <ul>
+                    <li><img src="images/icons/color-bell.png" alt=""/>MY TASKS <span>3 unread</span></li>
+                    <li><img src="images/icons/color-time.png" alt=""/>MY HOURS<span>238</span></li>
+                    <li><img src="images/icons/color-cash.png" alt=""/>MY CREDITS <span>4,530</span></li>
+                    <li><img src="images/icons/color-currency.png" alt=""/>MY DUES <span><a class="basic-link" href="">PAY NOW</a></span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-section">
+            <h4 class="section-header">My Health Plan</h4>
+                <div class="panels">
+                    <div class="panel orange panel-two-inline">
+                        <div class="panel-heading">
+                            <div class="panel-heading-title">
+                                <h4>My Current Plan</h4>
+                                <div class="panel-heading-period">
+                                    1/1/2015 - 3/31/2016
+                                </div>
+                            </div>
+                            <span>Plan A – Family</span>
+                        </div>
+                        <div class="panel-content">
+                            <div class="panel-content-tabs">
+                                <ul class="tabs-title">
+                                    <li><a href="#tasks"><span>My tasks</span></a></li>
+                                    <li><a href="#summary"><span>View plan summary</span></a></li>
+                                </ul>
+                                <div id="tasks">
+                                    <ul>
+                                        <li>Your plan is pending approval.</li>
+                                        <li>Dependent documentation required.</li>
+                                    </ul>
+                                </div>
+                                <div id="summary">
+                                    <p class="plan-description">
+                                        <strong>PPO (10% Co-Insurance)</strong>
+                                    </p>
+                                    <p class="plan-description">
+                                        <strong>Annual Deductible:</strong>
+                                        $300 Per-Person / $700 Per Family
+                                    </p>
+                                    <p class="plan-description">
+                                        <strong>Medical out of Pocket Max:</strong>
+                                        $2,500 Per-Person / $6,000 Per Family
+                                    </p>
+                                    <p class="plan-description">
+                                        <strong>Family Supplemental Benefit (FSB) Limit:</strong>
+                                        $1,500.00 per family
+                                    </p>
+                                    <a class="button-link blue" href="">VIEW PLAN DETAILS</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <a href="">change PENDING plan »</a>
+                        </div>
+                    </div>
+                    <div class="panel blue panel-two-inline">
+                        <div class="panel-heading next-year">
+                            <div class="panel-heading-title">
+                                <h4>Next Plan Year</h4>
+                                <div class="panel-heading-period">
+                                    1/1/2015 - 3/31/2016
+                                </div>
+                            </div>
+                            <span>No Plan Selected</span>
+                        </div>
+                        <div class="panel-content">
+                            <div class="panel-content-tabs">
+                                <ul>
+                                    <li><a href="#planed-tasks"><span>My tasks</span></a></li>
+                                    <li><a href="#planed-summary"><span>Plan summary</span></a></li>
+                                </ul>
+                                <div id="planed-tasks">
+                                    <ul>
+                                        <li>Open Enrollment Period: <br/>
+                                            1/1/2016 – 2/28/2016</li>
+                                        <li>Your current plan will remain in effect
+                                            unless you enroll in a different plan
+                                            during the enrollment period. </li>
+                                    </ul>
+                                </div>
+                                <div id="planed-summary">
+                                    <div class="empty-tab">NO DETAILS <br/> AVAILABLE</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <a href="">select a new health PLAN »</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="central-section">
+                    <h4 class="section-header">My Health Plan Documents</h4>
+                    <p class="smaller">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim.</p>
+
+                    <div class="button-links">
+                        <a class="button-link iconized pdf" href="">Summary of Plan Description (SPD)</a>
+                        <a class="button-link iconized pdf last" href="">Summary of Plan Description (SBC)</a>
+                        <a class="button-link iconized pdf" href="">Glossary of Terms</a>
+                        <a class="button-link iconized pdf last" href="">Schedule of Benefits</a>
+                        <a class="button-link iconized pdf" href="">Welfare Plan Document</a>
+                        <a class="button-link iconized pdf last" href="">Frequently Asked Questions (FAQs)</a>
+                    </div>
+                    <a class="basic-link float-right" href="">See All Health Plans »</a>
+                </div>
+                <div class="inner-sidebar">
+                    <div class="no-title"></div>
+                    <a class="tile-link" href="">
+                        <strong>Life Eevent Changes?</strong>
+                        Have you experienced a recent Life Event Change (marriage, newborn/ adoption, divorce, death)?
+                    </a>
+                    <a class="tile-link" href="">
+                        <strong>Affordability Calculator</strong>
+                        Want to see what health plan options you can afford? Use this helpful tool!
+                    </a>
+                </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div id="help-bar">
+    <div id="inner-help-bar">
+        <p>Have any questions about your <br/>account or how to use the site?</p>
+        <a href="mailto:">EMAIL US</a>
+        OR CALL US AT <a href="tel:1-800-777-7777"><span>1-800-777-7777</span></a>
+    </div>
+</div>
+
+<div id="footer">
+    <div id="inner-footer">
+        <img id="bottom-logo" src="images/bottom_logo.png" alt=""/>
+        <p id="copyright">Copyright © My150 by MOEITS. All rights reserved.</p>
+        <ul id="footer-nav">
+            <li><a href="">SITE MAP</a></li>
+            <li><a href="">ANTI-FRAUD</a></li>
+            <li><a href="">PRIVACY POLICY</a></li>
+            <li><a href="">LEGAL</a></li>
+            <li><a href="">HELP</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+<script>
+    $(document).ready(function(){
+        $( ".panel-content-tabs" ).tabs({
+            active: 0
+        });
+    });
+</script>
+</html>
