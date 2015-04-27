@@ -28,13 +28,12 @@
                     text: 'CLEAR FIELDS',
                     class: 'back-button',
                     click: function() {
-                        $(this).find('select').select2("val", "");
                         $(this).find('input').val('');
                     }
                 },
                     {
-                        text: 'FINISH REGISTRATION »',
-                        class: 'finish-button',
+                        text: 'UPDATE PROFILE »',
+                        class: 'update-profile',
                         click: function() {
                             $(this).dialog('close');
                         }
@@ -47,7 +46,7 @@
             $editProfile.data("uiDialog")._title = function(title) {
                 title.html( this.options.title );
             };
-            $editProfile.dialog('option', 'title', '<strong>Complete Registration</strong> Please fill out all the information below so that we can set your account up just right.');
+            $editProfile.dialog('option', 'title', '<strong>Edit Profile</strong> Use the form below to edit or udpdat your profile information. ');
 
             $('#open-edit-profile').on('click', function(e){
                 e.preventDefault();
@@ -61,7 +60,7 @@
     <div id="header">
         <a id="logo" href="home.html"></a>
         <div id="account-links">
-            <a class="question" href=""></a>
+            <a class="question" href="">HELP</a>
             <a class="notification" href=""><span>3</span></a>
             <a class="logout" href="">LOGOUT</a>
         </div>
@@ -69,11 +68,11 @@
     <div id="header-border"></div>
 
     <div id="top-tabs">
-        <a class="top-tab home active" href="">Home</a>
+        <a class="top-tab home" href="dashboard.html">Home</a>
         <a class="top-tab health-plan" href="">My Health Plan</a>
         <a class="top-tab documents" href="">My Documents</a>
         <a class="top-tab pay-dues" href="">Pay My Dues</a>
-        <a class="top-tab profile" href="">My Profile</a>
+        <a class="top-tab profile active" href="profile.html">My Profile</a>
     </div>
     <div id="tabs-border"></div>
 
@@ -96,26 +95,36 @@
             <h4 class="section-header">My Profile</h4>
             <div id="profile-block">
                 <div id="profile-info">
-                    <strong>RICHARD BRANSON</strong><br/>
-                    1234 Main Street<br/>
-                    New York, NY 10001<br/>
-                    212-234-4567<br/>
-                    rb@richardbranson.com<br/>
-                    3 Dependents<br/>
-                    <br/>
-                    <a id="open-edit-profile" class="basic-link" href="">EDIT PROFILE</a>
+                    <div class="profile-name">
+                        <strong>bruce rauner</strong>
+                    </div>
+                    <div class="profile-address">
+                        1234 Main Street<br/>
+                        New York, NY 10001
+                    </div>
+                    <div class="profile-phone">
+                        212-234-4567<br/>
+                    </div>
+                    <div class="profile-email">
+                        master@bankaccount.com
+                    </div>
+                    <div class="profile-dependents">
+                        <a href="#">3 Dependents</a>
+                    </div>
                 </div>
-                <div class="placeholder"></div>
+                <div class="profile-buttons">
+                    <a id="open-edit-profile" class="button-link blue" href="">EDIT PROFILE</a>
+                    <a class="button-link blue" href="">CHANGE PASSWORD</a>
+                </div>
             </div>
             <h4 class="section-header">Account Summary</h4>
             <p>Please review the summary details of your account below to ensure all information is accurate, up-to</p>
 
-            <a class="button-link alternative team" href=""><strong>MY FAMILY</strong> Vivamus luctus urna sed</a>
-            <a class="button-link alternative time" href=""><strong>MY PLANS</strong> Vivamus luctus urna sed</a>
-            <a class="button-link alternative folder last" href=""><strong>MY EOBs</strong> Vivamus luctus urna sed</a>
-            <a class="button-link alternative doc" href=""><strong>MY DOCS</strong> Vivamus luctus urna sed</a>
-            <a class="button-link alternative currency" href=""><strong>MY BANK</strong> Vivamus luctus urna sed</a>
-            <a class="button-link alternative bell last" href=""><strong>MY ALERTS</strong> Vivamus luctus urna sed</a>
+            <a class="button-link iconized alternative team" href=""><strong>MY FAMILY</strong>3 Dependents</a>
+            <a class="button-link iconized alternative time" href=""><strong>MY PLAN HISTORY</strong>Plan A -Family</a>
+            <a class="button-link iconized alternative bell last" href=""><strong>MY TASKS</strong>NONE</a>
+            <a class="button-link iconized alternative doc" href=""><strong>MY DOCUMENTS</strong>Completed / Pending</a>
+            <a class="button-link iconized alternative white-cash last" href=""><strong>MY CREDITS</strong>4,530</a>
         </div>
     </div>
 
@@ -131,22 +140,47 @@
 
 <div id="edit-profile" class="edit-profile-modal">
     <form action="">
-        <div class="form-row invalid">
-            <p class="field-error">* Error messages should appear here.</p>
-            <label for="user-id">PLEASE ENTER YOUR MEMBER ID:</label>
-            <input id="user-id" type="text"/>
-        </div>
-        <span class="separator">- OR -</span>
         <div class="form-row">
             <p class="field-error">* Error messages should appear here.</p>
-            <label for="user-number">REGISTRATION NUMBER:</label>
-            <input id="user-number" type="text"/>
+            <div class="two-in-row">
+                <label for="first-name">FIRST NAME:</label>
+                <input class="two-in-row invalid" id="first-name" type="text"/>
+            </div>
+            <div class="two-in-row">
+                <label for="middle-name">MIDDLE:</label>
+                <input class="two-in-row" id="middle-name" type="text"/>
+            </div>
         </div>
-        <span class="separator">- AND -</span>
         <div class="form-row">
             <p class="field-error">* Error messages should appear here.</p>
-            <label for="user-social-number">LAST 4 OF SOCIAL SECURITY #:</label>
-            <input id="user-social-number" type="text"/>
+            <div class="two-in-row">
+                <label for="last-name">LAST NAME:</label>
+                <input class="two-in-row" id="last-name" type="text"/>
+            </div>
+            <div class="two-in-row">
+                <label for="middle-name">SUFFIX:</label>
+                <input class="two-in-row" id="suffix-to-name" type="text"/>
+            </div>
+        </div>
+        <div class="form-row">
+            <p class="field-error">* Error messages should appear here.</p>
+            <label for="address-line-one">ADDRESS (LINE 1):</label>
+            <input id="address-line-one" type="text"/>
+        </div>
+        <div class="form-row">
+            <p class="field-error">* Error messages should appear here.</p>
+            <label for="address-line-two">ADDRESS (LINE 2):</label>
+            <input id="address-line-two" type="text"/>
+        </div>
+        <div class="form-row">
+            <p class="field-error">* Error messages should appear here.</p>
+            <label for="address-line-two">SEX:</label>
+            <input name="sex" id="male" type="radio" checked>
+            <label for="male"><span></span>Male</label>
+        </div>
+        <div class="form-row">
+            <input name="sex" id="female" type="radio">
+            <label for="female"><span></span>Female</label>
         </div>
     </form>
 </div>
@@ -154,7 +188,7 @@
 <div id="footer">
     <div id="inner-footer">
         <img id="bottom-logo" src="images/bottom_logo.png" alt=""/>
-        <p id="copyright">Copyright © My150 by MOE Union. All rights reserved.</p>
+        <p id="copyright">Copyright © My150 by MOEITS. All rights reserved.</p>
         <ul id="footer-nav">
             <li><a href="">SITE MAP</a></li>
             <li><a href="">ANTI-FRAUD</a></li>

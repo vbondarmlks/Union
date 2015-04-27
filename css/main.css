@@ -161,6 +161,9 @@ a.button-link.currency {
 a.button-link.cash {
     background: #69a7ee url('../images/icons/color-cash.png') 15px center no-repeat;
 }
+a.button-link.white-cash {
+    background: #69a7ee url('../images/icons/white-cash.png') 15px center no-repeat;
+}
 a.button-link.bell {
     background: #69a7ee url('../images/icons/white-bell-big.png') 15px center no-repeat;
 }
@@ -908,6 +911,22 @@ input.slider-input {
     background: #e9eef3;
     border: 1px solid #e9eef3;
 }
+.ui-dialog-content .form-row:after{
+    clear: both;
+    display: table;
+    content: '';
+}
+.ui-dialog-content .two-in-row{
+    float: left;
+    margin-right: 31px;
+}
+.ui-dialog-content .two-in-row:last-child{
+    margin-right: 0;
+}
+.ui-dialog-content .two-in-row input, .ui-dialog-content .two-in-row label{
+    width: 272px;
+
+}
 .ui-dialog-content input.invalid,
 .ui-dialog-content .invalid input {
     border: 1px solid #ea2459;
@@ -938,6 +957,9 @@ input.slider-input {
 }
 
 /* -- modal footer -- */
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset{
+    float: none;
+}
 .ui-dialog .ui-dialog-buttonpane {
     margin: 0;
     padding: 0 0 49px;
@@ -945,7 +967,7 @@ input.slider-input {
     border: 0;
 }
 .ui-dialog.blue-footer .ui-dialog-buttonpane {
-    padding: 23px 0;
+    padding: 23px;
     background: #e9eef3;
 }
 .ui-dialog .ui-dialog-buttonpane button {
@@ -966,6 +988,10 @@ input.slider-input {
     line-height: 71px;
 }
 
+/* -- edit profile modal -- */
+.ui-dialog .ui-dialog-buttonpane button.update-profile {
+    margin: 0 45px 0 0;
+}
 /* -- register modal -- */
 .ui-dialog .ui-dialog-buttonpane button.finish-button {
     margin: 0 45px 0 0;
@@ -1254,6 +1280,10 @@ input.slider-input {
 .sidebar-widget li.time:hover,
 .sidebar-widget li.time.active {
     background: #636f7f url('../images/icons/white-time.png') 7px 9px no-repeat;
+}
+.sidebar-widget li.cash:hover,
+.sidebar-widget li.cash.active {
+    background: #636f7f url('../images/icons/white-cash.png') 7px 9px no-repeat;
 }
 .sidebar-widget li.folder {
     background: url('../images/icons/color-folder.png') 7px 9px no-repeat;
@@ -1711,11 +1741,15 @@ a.information-item:hover {
 /* Profile page
 /* ============================================================= */
 #profile-block {
-    margin: 25px 0 70px;
+    margin: 25px 0 25px;
     overflow: hidden;
 }
 #profile-info {
     float: left;
+    width:230px;
+}
+#profile-info > div{
+    margin-bottom: 15px;
 }
 #profile-block .placeholder {
     float: right;
@@ -1724,13 +1758,21 @@ a.information-item:hover {
     margin: 0 15px 0 0;
     background: #bfbfbf;
 }
-.profile-page .button-link {
-    float: left;
-    width: 247px;
-    margin: 0 19px 18px 0;
-    padding: 10px 15px 10px 60px;
-    line-height: normal;
+.profile-name{
+    text-transform: uppercase;
 }
-.profile-page .button-link strong {
-    text-align: left;
+.profile-dependents a{
+    text-decoration: underline;
+    color: #69a7ee;
+}
+.profile-dependents a:hover{
+    text-decoration: none;
+}
+.profile-buttons{
+    float: left;
+    margin-left: 20px;
+}
+.profile-buttons .button-link{
+    float: none;
+    margin-bottom: 10px;
 }
