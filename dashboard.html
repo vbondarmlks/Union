@@ -5,9 +5,40 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Dashboard</title>
     <meta name="description" content="">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/perfect-scrollbar.min.css">
     <link rel="stylesheet" href="css/main.css">
     <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/select2.min.js"></script>
+    <script type="text/javascript" src="js/perfect-scrollbar.jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            // edit profile modal
+            var $changePlan = $("#change-plan").dialog({
+                width: 870,
+                height: 570,
+                modal: true,
+                autoOpen: false,
+                draggable: false,
+                resizable: false,
+                open: function() {
+                    // custom scroll
+                    $('#edit-profile').perfectScrollbar();
+                }
+            });
+            $changePlan.data("uiDialog")._title = function(title) {
+                title.html( this.options.title );
+            };
+            $changePlan.dialog('option', 'title', '<strong>Change Healthcare Plan</strong> Some cleverly desciptive text about nothing particlar. ');
+
+            $('#open-plan-modal').on('click', function(e){
+                e.preventDefault();
+                $changePlan.dialog('open');
+            });
+        })
+    </script>
 </head>
 <body>
 <div id="page-wrap">
@@ -42,7 +73,7 @@
                     <li><img src="images/icons/color-currency.png" alt=""/>MY DUES <span><a class="basic-link" href="">PAY NOW</a></span></li>
                 </ul>
             </div>
-            <a class="tile-link" href="">
+            <a id="open-plan-modal" class="tile-link" href="">
                 <strong>Life Event Changes?</strong>
                 Have you experienced a recent Life Event Change (marriage, newborn / adoption, divorce, death)?
             </a>
@@ -158,6 +189,24 @@
     </div>
 </div>
 
+<div id="change-plan" class="change-plan-modal">
+    <p>You have 2 options for changing your healthcare plan:</p>
+    <div class="healthcare-plan-options">
+        <h4>Downgrade</h4>
+        <p>The requirements for downgrading are:</p>
+        <ul>
+            <li>Downgrade requirement number one</li>
+            <li>Downgrade requirement number two</li>
+        </ul>
+        <select name="" class="select2" style="width: 575px;">
+            <option value=""></option>
+            <option value="1">Choise #1</option>
+            <option value="2">Choise #2</option>
+            <option value="3">Choise #3</option>
+        </select>
+    </div>
+</div>
+
 <div id="footer">
     <div id="inner-footer">
         <img id="bottom-logo" src="images/bottom_logo.png" alt=""/>
@@ -178,5 +227,11 @@
             active: 0
         });
     });
+    $(function() {
+        $('.select2').select2({
+            placeholder: "Select Plan Year:",
+            minimumResultsForSearch: Infinity
+        });
+    })
 </script>
 </html>

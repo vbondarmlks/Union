@@ -399,7 +399,7 @@ input[type="radio"]:checked + label span{
     width: 376px;
     margin-right: 28px;
 }
-.panel-two-inline:last-child{
+.panel-two-inline:nth-child(2n){
     margin-right: 0;
 }
 
@@ -527,8 +527,29 @@ input[type="radio"]:checked + label span{
     background: #3b5c82;
 }
 /*panel tabs*/
-.panel-content-tabs{
-
+.panel-content .ui-widget{
+    font-family: Montserrat, sans-serif;
+}
+.panel-content .panel-content-tabs.ui-tabs.ui-widget.ui-widget-content.ui-corner-all{
+    color: #525252;
+    background: none;
+    border:none;
+}
+.panel-content .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active{
+    border: none;
+    background: none;
+}
+.panel-content .panel-content-tabs ul.ui-widget-header{
+    border: none;
+    background: none;
+}
+.panel-content .panel-content-tabs ul.ui-widget-header li{
+    border: none;
+    background: none;
+}
+.panel-content-tabs .ui-tabs-panel{
+    background: none;
+    border: none;
 }
 .panel-content-tabs ul.ui-widget-header{
     background: none;
@@ -542,7 +563,7 @@ input[type="radio"]:checked + label span{
     display:table;
     clear:both;
 }
-.panel-content-tabs ul.ui-widget-header li{
+.panel-content .panel-content-tabs ul.ui-widget-header li{
     width: 50%;
     float: left;
     background: #f9f9f9;
@@ -551,9 +572,14 @@ input[type="radio"]:checked + label span{
     font-size: 10px;
     text-transform: uppercase;
     line-height: 44px;
+    border-radius: 0!important;
 }
 .panel-content-tabs ul.ui-widget-header li:last-child{
     border-right: none;
+}
+.panel-content .panel-content-tabs ul.ui-widget-header li.ui-state-active{
+    background: none;
+    border-bottom: none;
 }
 .panel-content-tabs ul.ui-widget-header li a span{
     display: block;
@@ -561,10 +587,6 @@ input[type="radio"]:checked + label span{
     color: #444444;
     font-weight: bold;
     text-align: center;
-}
-.panel-content-tabs ul.ui-widget-header li.ui-state-active{
-    border-bottom: none;
-    background: none;
 }
 .panel-content-tabs ul.ui-widget-header li.ui-state-active a span{
     color: #69a7ee;
