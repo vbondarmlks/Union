@@ -158,6 +158,9 @@ a.button-link.doc {
 a.button-link.currency {
     background: #69a7ee url('../images/icons/white-currency-big.png') 15px center no-repeat;
 }
+a.button-link.cash {
+    background: #69a7ee url('../images/icons/color-cash.png') 15px center no-repeat;
+}
 a.button-link.bell {
     background: #69a7ee url('../images/icons/white-bell-big.png') 15px center no-repeat;
 }
@@ -173,11 +176,11 @@ a.button-link.grey:hover {
 a.tile-link {
     display: block;
     margin: 0 0 11px;
-    padding: 16px 16px 16px 70px;
+    padding: 16px 70px 16px 12px;
     font-size: 12px;
     color: #abb1bf;
     line-height: 19px;
-    background: #3c475f url('../images/tile_link_bg.png') 20px 18px no-repeat;
+    background: #3c475f url('../images/tile_link_bg.png') right center no-repeat;
     border-bottom: 11px solid #59698c;
 }
 a.tile-link:hover {
@@ -326,7 +329,7 @@ input[type="radio"]:checked + label span{
 }
 .main-section {
     float: right;
-    width: 760px;
+    width: 780px;
     font-size: 14px;
     color: #595959;
 }
@@ -390,7 +393,7 @@ input[type="radio"]:checked + label span{
 }
 .panel-two-inline{
     float: left;
-    width: 366px;
+    width: 376px;
     margin-right: 28px;
 }
 .panel-two-inline:last-child{
@@ -1268,6 +1271,9 @@ input.slider-input {
 }
 .sidebar-widget li.currency {
     background: url('../images/icons/color-currency.png') 7px 9px no-repeat;
+}
+.sidebar-widget li.cash {
+    background: url('../images/icons/color-cash.png') 7px 9px no-repeat;
 }
 .sidebar-widget li.currency:hover,
 .sidebar-widget li.currency.active {

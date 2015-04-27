@@ -5,7 +5,56 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Profile</title>
     <meta name="description" content="">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/perfect-scrollbar.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/select2.min.js"></script>
+    <script type="text/javascript" src="js/perfect-scrollbar.jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            // edit profile modal
+            var $editProfile = $("#edit-profile").dialog({
+                dialogClass: 'blue-footer',
+                width: 870,
+                height: 570,
+                modal: true,
+                autoOpen: false,
+                draggable: false,
+                resizable: false,
+                buttons: [{
+                    text: 'CLEAR FIELDS',
+                    class: 'back-button',
+                    click: function() {
+                        $(this).find('select').select2("val", "");
+                        $(this).find('input').val('');
+                    }
+                },
+                    {
+                        text: 'FINISH REGISTRATION »',
+                        class: 'finish-button',
+                        click: function() {
+                            $(this).dialog('close');
+                        }
+                    }],
+                open: function() {
+                    // custom scroll
+                    $('#edit-profile').perfectScrollbar();
+                }
+            });
+            $editProfile.data("uiDialog")._title = function(title) {
+                title.html( this.options.title );
+            };
+            $editProfile.dialog('option', 'title', '<strong>Complete Registration</strong> Please fill out all the information below so that we can set your account up just right.');
+
+            $('#open-edit-profile').on('click', function(e){
+                e.preventDefault();
+                $editProfile.dialog('open');
+            });
+        })
+    </script>
 </head>
 <body>
 <div id="page-wrap">
@@ -33,19 +82,18 @@
             <div class="sidebar-widget">
                 <h4 class="sidebar-header">&nbsp;</h4>
                 <ul>
+                    <li class="bell"><a href="">MY TASKS</a></li>
+                    <li class="doc"><a href="">MY DOCUMENTS</a></li>
                     <li class="team"><a href="">MY FAMILY</a></li>
-                    <li class="time"><a href="plans.html">MY PLANS</a></li>
-                    <li class="folder"><a href="">MY EOBs</a></li>
-                    <li class="doc"><a href="">MY DOCS</a></li>
-                    <li class="currency"><a href="">MY BANK</a></li>
-                    <li class="bell"><a href="">MY ALERTS</a></li>
+                    <li class="time"><a href="plans.html">MY PLAN HISTORY</a></li>
+                    <li class="cash"><a href="">MY CREDITS</a></li>
                     <li class="edit active"><a href="">EDIT PROFILE</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="main-section">
-            <h4 class="section-header">Your Profile</h4>
+            <h4 class="section-header">My Profile</h4>
             <div id="profile-block">
                 <div id="profile-info">
                     <strong>RICHARD BRANSON</strong><br/>
@@ -55,12 +103,12 @@
                     rb@richardbranson.com<br/>
                     3 Dependents<br/>
                     <br/>
-                    <a class="basic-link" href="">EDIT PROFILE</a>
+                    <a id="open-edit-profile" class="basic-link" href="">EDIT PROFILE</a>
                 </div>
                 <div class="placeholder"></div>
             </div>
-            <h4 class="section-header">At-a-Glance</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim.</p>
+            <h4 class="section-header">Account Summary</h4>
+            <p>Please review the summary details of your account below to ensure all information is accurate, up-to</p>
 
             <a class="button-link alternative team" href=""><strong>MY FAMILY</strong> Vivamus luctus urna sed</a>
             <a class="button-link alternative time" href=""><strong>MY PLANS</strong> Vivamus luctus urna sed</a>
@@ -79,6 +127,28 @@
         <a href="mailto:">EMAIL US</a>
         OR CALL US AT <a href="tel:1-800-777-7777"><span>1-800-777-7777</span></a>
     </div>
+</div>
+
+<div id="edit-profile" class="edit-profile-modal">
+    <form action="">
+        <div class="form-row invalid">
+            <p class="field-error">* Error messages should appear here.</p>
+            <label for="user-id">PLEASE ENTER YOUR MEMBER ID:</label>
+            <input id="user-id" type="text"/>
+        </div>
+        <span class="separator">- OR -</span>
+        <div class="form-row">
+            <p class="field-error">* Error messages should appear here.</p>
+            <label for="user-number">REGISTRATION NUMBER:</label>
+            <input id="user-number" type="text"/>
+        </div>
+        <span class="separator">- AND -</span>
+        <div class="form-row">
+            <p class="field-error">* Error messages should appear here.</p>
+            <label for="user-social-number">LAST 4 OF SOCIAL SECURITY #:</label>
+            <input id="user-social-number" type="text"/>
+        </div>
+    </form>
 </div>
 
 <div id="footer">
