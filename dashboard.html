@@ -18,14 +18,13 @@
             // edit profile modal
             var $changePlan = $("#change-plan").dialog({
                 width: 870,
-                height: 570,
                 modal: true,
                 autoOpen: false,
                 draggable: false,
                 resizable: false,
                 open: function() {
-                    // custom scroll
-                    $('#edit-profile').perfectScrollbar();
+                    var separatorHeight = $('.left').height() > $('.right').height() ? $('.left').height() : $('.right').height();
+                    $('.plan-separator').css({height : separatorHeight});
                 }
             });
             $changePlan.data("uiDialog")._title = function(title) {
@@ -33,9 +32,44 @@
             };
             $changePlan.dialog('option', 'title', '<strong>Change Healthcare Plan</strong> Some cleverly desciptive text about nothing particlar. ');
 
+            var $downgradeError = $("#downgrade-error").dialog({
+                width: 870,
+                modal: true,
+                autoOpen: false,
+                draggable: false,
+                resizable: false,
+                buttons: [{
+                    text: 'OK, CLOSE WINDOW',
+                    class: 'back-button',
+                    click: function() {
+                        $(this).dialog('close');
+                    }
+                }]
+            });
+            $downgradeError.data("uiDialog")._title = function(title) {
+                title.html( this.options.title );
+            };
+            $downgradeError.dialog('option', 'title', '<strong>Downgrade Error</strong> Some cleverly desciptive text about nothing particlar. ');
             $('#open-plan-modal').on('click', function(e){
                 e.preventDefault();
                 $changePlan.dialog('open');
+            });
+
+            $('#downgrade').on('click', function(e){
+                e.preventDefault();
+                $downgradeError.dialog('open');
+            });
+        })
+
+        $(document).ready(function(){
+            $( ".panel-content-tabs" ).tabs({
+                active: 0
+            });
+        });
+        $(function() {
+            $('.select2').select2({
+                placeholder: "Select Plan Year:",
+                minimumResultsForSearch: Infinity
             });
         })
     </script>
@@ -191,20 +225,29 @@
 
 <div id="change-plan" class="change-plan-modal">
     <p>You have 2 options for changing your healthcare plan:</p>
-    <div class="healthcare-plan-options">
-        <h4>Downgrade</h4>
+    <div class="healthcare-plan-options left">
+        <h3>Downgrade</h3>
         <p>The requirements for downgrading are:</p>
         <ul>
             <li>Downgrade requirement number one</li>
             <li>Downgrade requirement number two</li>
         </ul>
-        <select name="" class="select2" style="width: 575px;">
-            <option value=""></option>
-            <option value="1">Choise #1</option>
-            <option value="2">Choise #2</option>
-            <option value="3">Choise #3</option>
-        </select>
+        <button type="button" id="downgrade">I WOULD LIKE TO DOWNGRADE</button>
     </div>
+    <div class="plan-separator"></div>
+    <div class="healthcare-plan-options right">
+        <h3>Life Changing Event</h3>
+        <p>The requirements for downgrading are:</p>
+        <ul>
+            <li>Downgrade requirement number one</li>
+            <li>Downgrade requirement number two</li>
+        </ul>
+        <button type="button">I HAVE A LIFE CHANGING EVENT</button>
+    </div>
+</div>
+
+<div id="downgrade-error" class="downgrade-error-modal">
+    <p>You have 2 options for changing your healthcare plan:</p>
 </div>
 
 <div id="footer">
@@ -221,17 +264,4 @@
     </div>
 </div>
 </body>
-<script>
-    $(document).ready(function(){
-        $( ".panel-content-tabs" ).tabs({
-            active: 0
-        });
-    });
-    $(function() {
-        $('.select2').select2({
-            placeholder: "Select Plan Year:",
-            minimumResultsForSearch: Infinity
-        });
-    })
-</script>
 </html>

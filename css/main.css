@@ -1022,7 +1022,56 @@ input.slider-input {
     position: relative;
 }
 
-
+/* -- change plan modal --*/
+.healthcare-plan-options{
+    padding: 5px;
+    width:378px;
+}
+.healthcare-plan-options.left{
+    float: left;
+    padding-right: 40px;
+}
+.healthcare-plan-options.right{
+    float: right;
+    padding-left: 40px;
+}
+.healthcare-plan-options h3{
+    color: #69a7ee;
+    margin-bottom: 10px;
+}
+.healthcare-plan-options  p{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.healthcare-plan-options ul{
+    font-size: 14px;
+    list-style-position: inside;
+    list-style-image: url("../images/panel_list_item.png");
+    margin-bottom: 40px;
+}
+.healthcare-plan-options ul li{
+    margin-bottom: 10px;
+}
+.healthcare-plan-options button{
+    background: none;
+    border: none;
+    outline: none;
+    border-radius: 0;
+    text-transform: uppercase;
+    width: 305px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 71px;
+    background: #59a76a;
+    cursor: pointer;
+    font-size: 16px;
+}
+.plan-separator{
+    width: 5px;
+    background: #E7ECF1;
+    height: 100%;
+    float: left;
+}
 /* Scroll
 /* ============================================================= */
 .ps-container > .ps-scrollbar-y-rail {
